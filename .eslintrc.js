@@ -4,6 +4,13 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  settings: {
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
+  },
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -25,6 +32,16 @@ module.exports = {
       1,
       {
         extensions: [".ts", ".tsx"],
+      },
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
       },
     ],
   },
