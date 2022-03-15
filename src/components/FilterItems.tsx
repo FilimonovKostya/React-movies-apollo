@@ -22,16 +22,27 @@ function FilterItems() {
     { key: 10, label: "Nuxt", active: false },
   ]);
 
-  const handleDelete = (key: number) => () => {
-    setChipData((chips) => chips.filter((chip) => chip.key !== key));
+  const handleDelete = (key: ChipData) => () => {
+    setChipData((chips) =>
+      chips.map((chip) =>
+        chip.key === key.key && chip.active === key.active
+          ? { ...chip, active: false }
+          : { ...chip }
+      )
+    );
   };
 
+  console.log("state", chipData);
+
   const handleClick = (data: ChipData) => {
+    if (data.active) {
+      return;
+    }
     setChipData((prevState) =>
       prevState
         .map((el) =>
           el.key === data.key
-            ? { key: el.key, label: el.label, active: !data.active }
+            ? { key: el.key, label: el.label, active: !el.active }
             : { ...el }
         )
         .sort((a, b) => {
@@ -61,9 +72,7 @@ function FilterItems() {
               label={data.label}
               style={{ margin: "5px" }}
               onClick={() => handleClick(data)}
-              onDelete={
-                data.label === "React" ? undefined : handleDelete(data.key)
-              }
+              onDelete={data.label === "React" ? undefined : handleDelete(data)}
             />
           );
         })}
