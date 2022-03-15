@@ -1,51 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Chip, Container, Stack } from "@mui/material";
 
 interface ChipData {
   key: number;
   label: string;
+  active: boolean;
 }
 
 function FilterItems() {
-  const handleClick = () => {
-    console.info("You clicked the Chip.");
-  };
-
-  const [chipData, setChipData] = React.useState<readonly ChipData[]>([
-    { key: 0, label: "Angular" },
-    { key: 1, label: "jQuery" },
-    { key: 2, label: "Polymer" },
-    { key: 3, label: "React" },
-    { key: 4, label: "Vue.js" },
-    { key: 5, label: "Vue.js" },
-    { key: 6, label: "Vue.js" },
-    { key: 7, label: "Vue.js" },
-    { key: 8, label: "Vue.js" },
-    { key: 9, label: "Vue.js" },
-    { key: 10, label: "Vue.js" },
-    { key: 11, label: "Vue.js" },
-    { key: 12, label: "Vue.js" },
-    { key: 13, label: "Vue.js" },
-    { key: 14, label: "Vue.js" },
-    { key: 15, label: "Vue.js" },
-    { key: 16, label: "Vue.js" },
-    { key: 17, label: "Vue.js" },
-    { key: 18, label: "Vue.js" },
-    { key: 19, label: "Vue.js" },
-    { key: 20, label: "Vue.js" },
-    { key: 21, label: "Vue.js" },
-    { key: 22, label: "Vue.js" },
-    { key: 23, label: "Vue.js" },
-    { key: 24, label: "Vue.js" },
-    { key: 25, label: "Vue.js" },
-    { key: 26, label: "Vue.js" },
-    { key: 27, label: "Vue.js" },
-    { key: 28, label: "Vue.js" },
-    { key: 29, label: "Vue.js" },
+  const [chipData, setChipData] = React.useState<ChipData[]>([
+    { key: 0, label: "Angular", active: false },
+    { key: 1, label: "jQuery", active: false },
+    { key: 2, label: "Polymer", active: false },
+    { key: 3, label: "React", active: false },
+    { key: 4, label: "Vue.js", active: false },
+    { key: 5, label: "Meteor.js", active: false },
+    { key: 6, label: "Svelte", active: false },
+    { key: 7, label: "Apollo", active: false },
+    { key: 8, label: "Graph QL", active: false },
+    { key: 9, label: "Next js", active: false },
+    { key: 10, label: "Nuxt", active: false },
   ]);
+
+  console.log("state", chipData);
+  const [activeLabel, setActiveLabel] = useState<number>();
+  console.log("activeLabels", activeLabel);
 
   const handleDelete = (key: number) => () => {
     setChipData((chips) => chips.filter((chip) => chip.key !== key));
+  };
+
+  const handleClick = (data: ChipData) => {
+    setActiveLabel(data.key);
+    setChipData((prevState) =>
+      prevState
+        .map((el) =>
+          el.key === data.key
+            ? { key: el.key, label: el.label, active: !data.active }
+            : { ...el }
+        )
+        .sort((a, b) => {
+          if (a.active !== b.active) {
+            return a.active ? -1 : 1;
+          }
+          return a.active > b.active ? 1 : -1;
+        })
+    );
   };
 
   return (
@@ -61,10 +61,11 @@ function FilterItems() {
           return (
             <Chip
               key={data.key}
+              variant={data.active ? "filled" : "outlined"}
               color="primary"
               label={data.label}
               style={{ margin: "5px" }}
-              onClick={handleClick}
+              onClick={() => handleClick(data)}
               onDelete={
                 data.label === "React" ? undefined : handleDelete(data.key)
               }
