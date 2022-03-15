@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Chip, Container, Stack } from "@mui/material";
 
 interface ChipData {
@@ -22,16 +22,11 @@ function FilterItems() {
     { key: 10, label: "Nuxt", active: false },
   ]);
 
-  console.log("state", chipData);
-  const [activeLabel, setActiveLabel] = useState<number>();
-  console.log("activeLabels", activeLabel);
-
   const handleDelete = (key: number) => () => {
     setChipData((chips) => chips.filter((chip) => chip.key !== key));
   };
 
   const handleClick = (data: ChipData) => {
-    setActiveLabel(data.key);
     setChipData((prevState) =>
       prevState
         .map((el) =>
