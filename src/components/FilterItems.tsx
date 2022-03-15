@@ -43,6 +43,7 @@ function FilterItems() {
     if (data.active) {
       return;
     }
+
     setChipData((prevState) =>
       prevState
         .map((el) =>
@@ -77,7 +78,7 @@ function FilterItems() {
               label={data.label}
               style={{ margin: "5px" }}
               onClick={() => handleClick(data)}
-              onDelete={data.label === "React" ? undefined : handleDelete(data)}
+              onDelete={handleDelete(data)}
             />
           );
         })}
