@@ -24,15 +24,20 @@ function FilterItems() {
 
   const handleDelete = (key: ChipData) => () => {
     setChipData((chips) =>
-      chips.map((chip) =>
-        chip.key === key.key && chip.active === key.active
-          ? { ...chip, active: false }
-          : { ...chip }
-      )
+      chips
+        .map((chip) =>
+          chip.key === key.key && chip.active === key.active
+            ? { ...chip, active: false }
+            : { ...chip }
+        )
+        .sort((a, b) => {
+          if (a.active !== b.active) {
+            return a.active ? -1 : 1;
+          }
+          return 1;
+        })
     );
   };
-
-  console.log("state", chipData);
 
   const handleClick = (data: ChipData) => {
     if (data.active) {
