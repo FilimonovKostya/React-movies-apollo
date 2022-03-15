@@ -43,7 +43,7 @@ function FilterItems() {
           if (a.active !== b.active) {
             return a.active ? -1 : 1;
           }
-          return a.active > b.active ? 1 : -1;
+          return a.active > b.active ? 1 : 1;
         })
     );
   };
