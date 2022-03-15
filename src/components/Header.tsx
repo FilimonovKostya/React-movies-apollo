@@ -6,12 +6,12 @@ import { ReactComponent as Film } from "../assets/film-42.svg";
 
 function Header() {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", boxShadow: "0px 1px 5px black" }}>
       <Paper
-        variant="elevation"
-        elevation={8}
-        square
-        sx={{ width: "100%", background: indigo["900"] }}
+        sx={{
+          width: "100%",
+          background: indigo["900"],
+        }}
       >
         <Box
           sx={{
