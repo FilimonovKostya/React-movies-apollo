@@ -11,12 +11,31 @@ function App() {
   return (
     <Box sx={{ backgroundColor: indigo["900"], minHeight: "100vh" }}>
       <Header />
-      <Container sx={{ pt: "10px", textAlign: "center" }}>
+      <Container
+        sx={{
+          pt: "10px",
+          textAlign: "center",
+        }}
+      >
         <Typography variant="h2" color="white">
           Discover movies
         </Typography>
         <FilterItems />
-        <MovieCard />
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+          }}
+        >
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+        </Container>
       </Container>
       <Footer />
     </Box>
