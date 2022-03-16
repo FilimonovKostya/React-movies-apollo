@@ -10,6 +10,7 @@ import WhatshotIcon from "@mui/icons-material/Whatshot";
 import TheatersIcon from "@mui/icons-material/Theaters";
 import MonitorIcon from "@mui/icons-material/Monitor";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -25,21 +26,29 @@ function Footer() {
       >
         <BottomNavigation showLabels sx={{ backgroundColor: blue["700"] }}>
           <BottomNavigationAction
+            component={Link}
+            to="/trending"
             sx={{ color: "white" }}
             label="Trending"
             icon={<WhatshotIcon />}
           />
           <BottomNavigationAction
+            component={Link}
+            to="/films"
             sx={{ color: "white" }}
             label="Films"
             icon={<TheatersIcon />}
           />
           <BottomNavigationAction
+            component={Link}
+            to="/serials"
             sx={{ color: "white" }}
             label="Serials"
             icon={<MonitorIcon />}
           />
           <BottomNavigationAction
+            component={Link}
+            to="/search"
             sx={{ color: "white" }}
             label="Search"
             icon={<SearchIcon />}

@@ -1,14 +1,15 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { indigo } from "@mui/material/colors";
+import { Route, Routes } from "react-router";
 import Header from "./components/Header";
-import FilterItems from "./components/FilterItems";
 import Footer from "./components/Footer";
+import FilterItems from "./components/FilterItems";
 import MovieCard from "./components/MovieCard";
 
 function App() {
   return (
-    <Box sx={{ backgroundColor: indigo["900"] }}>
+    <Box sx={{ backgroundColor: indigo["900"], minHeight: "100vh" }}>
       <Header />
       <Container
         sx={{
@@ -19,29 +20,32 @@ function App() {
         <Typography variant="h2" color="white">
           Discover movies
         </Typography>
-        <FilterItems />
-        <Container
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-          }}
-        >
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-        </Container>
+        <Routes>
+          <Route path="/search" element={<div>Search</div>} />
+          <Route
+            path="/serials"
+            element={
+              <>
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+              </>
+            }
+          />
+          <Route path="/films" element={<FilterItems />} />
+          <Route path="/trending" element={<div>Trending</div>} />
+        </Routes>
       </Container>
       <Footer />
     </Box>
