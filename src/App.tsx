@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { indigo } from "@mui/material/colors";
-
 import Header from "./components/Header";
 import FilterItems from "./components/FilterItems";
 import Footer from "./components/Footer";
@@ -9,7 +8,7 @@ import MovieCard from "./components/MovieCard";
 
 function App() {
   return (
-    <Box sx={{ backgroundColor: indigo["900"], minHeight: "100vh" }}>
+    <Box sx={{ backgroundColor: indigo["900"] }}>
       <Header />
       <Container
         sx={{
@@ -28,6 +27,13 @@ function App() {
             flexWrap: "wrap",
           }}
         >
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
           <MovieCard />
           <MovieCard />
           <MovieCard />
