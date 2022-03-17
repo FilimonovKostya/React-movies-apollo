@@ -3,9 +3,18 @@ import { TextField } from "@mui/material";
 
 function Search() {
   return (
-    // <ThemeProvider theme={theme}>
-
-    <TextField fullWidth label="Search" type="search" />
+    <TextField
+      fullWidth
+      sx={{
+        "&.MuiTextField-root": {
+          input: {
+            color: "white",
+          },
+        },
+      }}
+      label="Search"
+      type="search"
+    />
   );
 }
 
