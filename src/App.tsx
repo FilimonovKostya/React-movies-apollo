@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { indigo } from "@mui/material/colors";
 import { Route, Routes } from "react-router";
@@ -7,8 +7,11 @@ import Footer from "./components/Footer";
 import FilterItems from "./components/FilterItems";
 import MovieCard from "./components/MovieCard";
 import Search from "./components/Search";
+import AboutFilm from "./components/AboutFilm";
 
 function App() {
+  const [isOpenModal] = useState(false);
+
   return (
     <Box sx={{ backgroundColor: indigo["900"], minHeight: "100vh" }}>
       <Header />
@@ -25,26 +28,10 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route
             path="/serials"
-            element={
-              <>
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-              </>
-            }
+            element={<MovieCard isOpenModal={isOpenModal} />}
           />
           <Route path="/films" element={<FilterItems />} />
+          <Route path="/about" element={<AboutFilm />} />
           <Route path="/trending" element={<div>Trending</div>} />
         </Routes>
       </Container>

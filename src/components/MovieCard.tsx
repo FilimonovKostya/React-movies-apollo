@@ -9,7 +9,12 @@ import {
 } from "@mui/material";
 import { blue, grey, indigo } from "@mui/material/colors";
 
-function MovieCard() {
+type MovieCardProps = {
+  isOpenModal: boolean;
+};
+
+function MovieCard({ isOpenModal }: MovieCardProps) {
+  console.log("isOpenModal", isOpenModal);
   return (
     <Badge sx={{ margin: "10px 5px" }} badgeContent={4} color="success">
       <Card
