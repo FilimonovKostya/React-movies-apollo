@@ -1,20 +1,26 @@
 import React from "react";
-import { TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
+import ScreenSearchDesktopOutlinedIcon from "@mui/icons-material/ScreenSearchDesktopOutlined";
 
 function Search() {
   return (
-    <TextField
-      fullWidth
-      sx={{
-        "&.MuiTextField-root": {
-          input: {
-            color: "white",
+    <Box display="flex">
+      <TextField
+        fullWidth
+        sx={{
+          "&.MuiTextField-root": {
+            input: {
+              color: "white",
+            },
           },
-        },
-      }}
-      label="Search"
-      type="search"
-    />
+        }}
+        label="Search"
+        type="search"
+      />
+      <Button variant="outlined" sx={{ color: "white" }}>
+        <ScreenSearchDesktopOutlinedIcon />
+      </Button>
+    </Box>
   );
 }
 
