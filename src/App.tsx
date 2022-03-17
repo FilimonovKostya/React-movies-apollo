@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FilterItems from "./components/FilterItems";
 import MovieCard from "./components/MovieCard";
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           Discover movies
         </Typography>
         <Routes>
-          <Route path="/search" element={<div>Search</div>} />
+          <Route path="/search" element={<Search />} />
           <Route
             path="/serials"
             element={
