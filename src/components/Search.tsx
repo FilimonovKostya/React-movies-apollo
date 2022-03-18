@@ -7,15 +7,15 @@ function Search() {
     <Box display="flex">
       <TextField
         fullWidth
+        variant="standard"
         sx={{
-          "&.MuiTextField-root": {
-            input: {
-              color: "white",
-            },
+          input: {
+            color: "white",
           },
         }}
         label="Search"
         type="search"
+        InputLabelProps={{ style: { color: "white", borderColor: "white" } }}
       />
       <Button variant="outlined" sx={{ color: "white" }}>
         <ScreenSearchDesktopOutlinedIcon />
