@@ -8,6 +8,7 @@ import FilterItems from "./components/FilterItems";
 import MovieCard from "./components/MovieCard";
 import Search from "./components/Search";
 import AboutFilm from "./components/AboutFilm";
+import SwiperComponent from "./components/SwiperComponent";
 
 function App() {
   const [isOpenModal] = useState(false);
@@ -32,6 +33,7 @@ function App() {
           />
           <Route path="/films" element={<FilterItems />} />
           <Route path="/about" element={<AboutFilm />} />
+          <Route path="/swiper" element={<SwiperComponent />} />
           <Route path="/trending" element={<div>Trending</div>} />
         </Routes>
       </Container>
