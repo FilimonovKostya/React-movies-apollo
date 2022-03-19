@@ -21,43 +21,55 @@ function SwiperComponent() {
       }}
       modules={[Autoplay]}
     >
-      <SwiperSlide>
+      <SwiperSlide className="suckDick">
         <img
           src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
           alt=""
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="suckDick">
         <img
           src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
           alt=""
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="suckDick">
         <img
           src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
           alt=""
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="suckDick">
         <img
           src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
           alt=""
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="suckDick">
         <img
           src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
           alt=""
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="suckDick">
         <img
           src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
           alt=""
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="suckDick">
+        <img
+          src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
+          alt=""
+        />
+      </SwiperSlide>
+      <SwiperSlide className="suckDick">
+        <img
+          src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
+          alt=""
+        />
+      </SwiperSlide>
+      <SwiperSlide className="suckDick">
         <img
           src="https://image.tmdb.org/t/p/w300//aTcqu8cI4wMohU17xTdqmXKTGrw.jpg"
           alt=""
