@@ -38,7 +38,7 @@ function AboutFilm() {
             display: "flex",
             objectFit: "contain",
             width: "30%",
-            margin: "0 15px",
+            marginLeft: "15px",
           }}
           image="https://image.tmdb.org/t/p/w500//wFjboE0aFZNbVOF05fzrka9Fqyx.jpg"
           alt="green iguana"
@@ -47,8 +47,6 @@ function AboutFilm() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
             width: "70%",
           }}
         >
