@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import SwiperComponent from "./SwiperComponent";
 
 function AboutFilm() {
   return (
@@ -16,7 +17,6 @@ function AboutFilm() {
       <Card sx={{ display: "flex" }}>
         <CardMedia
           component="img"
-          height="500"
           width="280"
           image="https://image.tmdb.org/t/p/w500//wFjboE0aFZNbVOF05fzrka9Fqyx.jpg"
           alt="green iguana"
@@ -38,11 +38,13 @@ function AboutFilm() {
               save the future.
             </Typography>
           </Paper>
+          <SwiperComponent />
           <Button
             href="https://www.youtube.com/watch?v=0VxtIS6C3Ao&list=RDMM&index=4"
             startIcon={<YouTubeIcon />}
             variant="contained"
             sx={{
+              mt: "15px",
               backgroundColor: "#f50057",
               "&:hover": {
                 backgroundColor: "#c51162",
