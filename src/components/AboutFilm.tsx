@@ -13,15 +13,45 @@ import SwiperComponent from "./SwiperComponent";
 
 function AboutFilm() {
   return (
-    <Container maxWidth="xl">
-      <Card sx={{ display: "flex" }}>
+    <Container
+      maxWidth="xl"
+      sx={{
+        padding: "10px",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "0 15px",
+          width: "100%",
+        }}
+      >
         <CardMedia
           component="img"
-          width="280"
+          sx={{
+            display: "flex",
+            objectFit: "contain",
+            width: "30%",
+            margin: "0 15px",
+          }}
           image="https://image.tmdb.org/t/p/w500//wFjboE0aFZNbVOF05fzrka9Fqyx.jpg"
           alt="green iguana"
         />
-        <CardContent>
+        <CardContent
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "70%",
+          }}
+        >
           <Typography gutterBottom variant="h5" component="div">
             The Adam Project (2022)
           </Typography>
@@ -32,10 +62,17 @@ function AboutFilm() {
             elevation={4}
             sx={{ minHeight: "250px", p: "10px 5px", mb: "10px" }}
           >
-            <Typography variant="body2" color="text.secondary">
-              After accidentally crash-landing in 2022, time-traveling fighter
-              pilot Adam Reed teams up with his 12-year-old self on a mission to
-              save the future.
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              fontSize={18}
+              textAlign="left"
+            >
+              Vic and Melinda Van Allen are a couple in the small town of Little
+              Wesley. Their loveless marriage is held together only by a
+              precarious arrangement whereby, in order to avoid the messiness of
+              divorce, Melinda is allowed to take any number of lovers as long
+              as she does not desert her family.
             </Typography>
           </Paper>
           <SwiperComponent />
