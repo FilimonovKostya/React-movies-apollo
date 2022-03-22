@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { indigo } from "@mui/material/colors";
 import { Route, Routes } from "react-router";
@@ -11,8 +11,6 @@ import AboutFilm from "./components/AboutFilm";
 import SwiperComponent from "./components/SwiperComponent";
 
 function App() {
-  const [isOpenModal] = useState(false);
-
   return (
     <Box sx={{ backgroundColor: indigo["900"], minHeight: "100vh" }}>
       <Header />
@@ -27,10 +25,7 @@ function App() {
         </Typography>
         <Routes>
           <Route path="/search" element={<Search />} />
-          <Route
-            path="/serials"
-            element={<MovieCard isOpenModal={isOpenModal} />}
-          />
+          <Route path="/serials" element={<MovieCard />} />
           <Route path="/films" element={<FilterItems />} />
           <Route path="/about" element={<AboutFilm />} />
           <Route path="/swiper" element={<SwiperComponent />} />

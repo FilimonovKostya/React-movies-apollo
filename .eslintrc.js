@@ -28,6 +28,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {
+    "no-unused-vars": ["error", { vars: "all", args: "none" }],
     "react/jsx-filename-extension": [
       1,
       {
